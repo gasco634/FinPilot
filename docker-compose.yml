@@ -1,0 +1,20 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: sqlite:////app/data/finpilot.db
+      FINPILOT_SECRET_KEY: ${FINPILOT_SECRET_KEY:-local-compose-secret-change-me}
+    volumes:
+      - finpilot-data:/app/data
+    ports:
+      - "8000:8000"
+  frontend:
+    build: ./frontend
+    environment:
+      VITE_API_URL: http://localhost:8000/api
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend
+volumes:
+  finpilot-data:

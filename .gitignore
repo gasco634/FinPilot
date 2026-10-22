@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.venv-*/
+.deps/
+
+# Local database and uploaded files
+backend/finpilot.db
+backend/data/
+*.sqlite
+*.sqlite3
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/coverage/
+frontend/tsconfig.tsbuildinfo
+
+# Local environment and editor files
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
